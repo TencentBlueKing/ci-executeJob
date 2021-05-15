@@ -1,0 +1,69 @@
+{
+  "atomCode": "executeJob",
+  "execution": {
+    "packagePath": "executeJob-jar-with-dependencies.jar",
+    "language": "java",
+    "minimumVersion": "1.8",
+    "demands": [],
+    "target": "$bk_java_path -jar executeJob-jar-with-dependencies.jar -Dfile.encoding=utf8"
+  },
+  "input": {
+    "bizId": {
+      "label": "业务 ID",
+      "default": "",
+      "type": "vuex-input",
+      "desc": "Job中登记的业务ID，可到作业平台页面中查看，业务下拉选框中业务名称前面中括号内的数字",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "timeout": {
+      "label": "超时时间(单位为秒)",
+      "default": "600",
+      "type": "vuex-input",
+      "desc": "超时时间(单位为秒)",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "planId": {
+      "label": "执行方案ID",
+      "default": "",
+      "placeholder": "",
+      "type": "vuex-input",
+      "desc": "作业平台中的执行方案ID，可到作业平台的左侧【执行方案】Tab页查看",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "tipsGlobalVar": {
+      "type": "tips",
+      "label": "",
+      "tipStr": "全局变量数组JSON串格式可参考PaaS平台接口文档(地址为：[PAAS_HOST]/esb/api_docs/system/JOBV3/execute_job_plan)中的global_var_list参数。"
+    },
+    "tipsGlobalVar1": {
+      "type": "tips",
+      "label": "",
+      "tipStr": "最简单的只含字符串型全局变量的数组JSON串例子：[{\"name\":\"var1\",\"value\":\"var1_value\"},{\"name\":\"var2\",\"value\":\"var1_value\"}]"
+    },
+    "tipsGlobalVar2": {
+      "type": "tips",
+      "label": "",
+      "tipStr": "较复杂的含字符串、主机类型全局变量的数组JSON串例子：[{\"name\":\"var1\",\"value\":\"var1_value\"},{\"name\":\"static_hosts\",\"server\":{\"ip_list\":[{\"bk_cloud_id\":0,\"ip\":\"192.168.1.2\"}]}},{\"name\":\"node_hosts\",\"server\":{\"topo_node_list\":[{\"node_type\":\"set\",\"id\":93619}]}},{\"name\":\"dynamic_group_hosts\",\"server\":{\"dynamic_group_list\":[{\"id\":\"100001:bccb34dsllsml3jhrke0\"}]}}]"
+    },
+    "globalVarStr": {
+      "label": "全局变量数组JSON串",
+      "default": "[]",
+      "placeholder": "",
+      "type": "vuex-input",
+      "desc": "作业平台中的执行方案中的全局变量，name可到作业平台的左侧【执行方案】Tab页进入执行方案页点进方案详情查看",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    }
+  }
+}
