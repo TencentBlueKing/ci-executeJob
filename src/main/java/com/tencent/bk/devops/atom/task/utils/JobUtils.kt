@@ -23,6 +23,6 @@ object JobUtils {
     }
 
     fun getDetailUrl(jobHost: String, taskInstanceId: Long): String {
-        return "<a target='_blank' href='$jobHost/api_execute/$taskInstanceId'>Go to Job for Detail</a>"
+        return "<a target='_blank' href='$jobHost/api_execute/$taskInstanceId'>到作业平台查看详情(Go to Job for Detail)</a>"
     }
 }
